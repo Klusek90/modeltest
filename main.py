@@ -40,3 +40,10 @@ import torch
 #
 # ones = torch.ones([3,4])
 # print(ones)
+
+#range
+one_to_ten = torch.arange(1,11)
+print(one_to_ten)
+
+one_to_hundrend =  torch.arange(start=1, end=101, step=10)
+print(one_to_hundrend)
