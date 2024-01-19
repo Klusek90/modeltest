@@ -2,48 +2,50 @@ import pandas as pd
 import numpy as np
 import torch
 
+#===================== precision in computuing=======================
 
-  #### BASE INFO
-# scalar = torch.tensor(7)
-# print(scalar)
-# #dimentions
-# print(scalar.ndim)
+# * Different tensor type and devices
+# * conversion
 
-# #get tensor back
-# print(scalar.item())
 
-# #vector (magnitued/ direction) -one dimentional tensor
-# vector= torch.tensor([7,7])
-# print(vector.shape)
-
-# #matix -two dimentional tensor
-# MATRIX = torch.tensor([[7,8],[9,10]])
-# print(MATRIX[1])
-
-# #TENSOR -any number of dimentions
-# TENSOR = torch.tensor([[[1,2,3],
-#                         [1,2,3],
-#                         [5,6,7]]])
-# print(TENSOR.ndim)
+# float_32_tensor = torch.tensor([3.0,6.0,9.0],
+#                                dtype=torch.float32,  #tensor type
+#                                device=None,          #device tensor is run on (CPU, GPU, CUDA)
+#                                requires_grad=False)  #whether or no track gradiens
 #
-# #random tensor
-# random_tens = torch.rand (3,4)
-# print(random_tens)
-# print(random_tens.ndim)
+# print(float_32_tensor.dtype)
 #
-# random_image =torch.rand(size=(3, 224,244)) #height ,width ,color changels (RGB)
-# print(random_image.ndim, random_image.shape)
-
-# # creating tensor witl all zeros --- they are in float format
-# zeros = torch.zeros(size=(3,4))
-# print(zeros)
+# # convert tensor type
+# float_16_tensor= float_32_tensor.type(torch.float16)
+# print(float_16_tensor.dtype)
 #
-# ones = torch.ones([3,4])
-# print(ones)
+# print(float_16_tensor * float_32_tensor)
+#
+#
+# some_tensor = torch.randn(3,4)
+# print(some_tensor)
+# print(f"Datatype od tensor: {some_tensor.dtype}")
+# print(f"Shape of tensor {some_tensor.size()}")
 
-#range
-one_to_ten = torch.arange(1,11)
-print(one_to_ten)
+#========== Manipulation===============
 
-one_to_hundrend =  torch.arange(start=1, end=101, step=10)
-print(one_to_hundrend)
+# Tensor operation include:
+# * Adddition
+# * Subtraction
+# * Muliplication (element-wise)
+# * ZeroDivisionError
+# * Matrix muliplication
+
+tensor = torch.tensor([1,2,3])
+# print(tensor+10)
+# print(tensor*10)
+# print(tensor-10)
+
+# double_tensor = torch.tensor([[1,2,3],[4,5,6]])
+# print(double_tensor +10)
+# print(double_tensor *10)
+# print(double_tensor -10)
+
+# ==Mutliplication of MARIX==
+tensor = torch.tensor([1,2,3])
+print(tensor*tensor)
