@@ -61,12 +61,3 @@ tensor_B = torch.tensor([[7,10],
                          [9,12]])
 #.T is transpose (obrocenie)
 print(torch.matmul(tensor_A,tensor_B.T))
-
-# ========= tensor aggregation =====================
-x = torch.arange(0,100,10)
-
-print(x)
-print(torch.min(x))                       # x.min()
-print(torch.max(x))                       # x.max()
-print(torch.mean(x.type(torch.float32)))  # requiered to change to data type float
-print(torch.sum(x))
